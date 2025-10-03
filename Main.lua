@@ -130,13 +130,16 @@ end)
 
 -- Killer = player character, killa = player killer value or survivor value, s = player is survivor
 
+-- Morphing module script.
 game.ReplicatedStorage:WaitForChild("Transform")
 local Transform = require(game.ReplicatedStorage.Transform)
 Transform = Transform.Initiate
 
+-- Handles things like sprinting, abilities, etc.
 local RI = game.ReplicatedStorage:WaitForChild("RoundInitiation")
 RI = require(RI)
 
+-- Gets which LMS Music (Last Man Standing) is supposed to go.
 local GetLMS = game.ReplicatedStorage:WaitForChild("GetLMS")
 GetLMS = require(GetLMS)
 
@@ -145,6 +148,7 @@ local Highlight = game.ReplicatedStorage:WaitForChild("HighlightClient")
 local MusicStart = game.ReplicatedStorage:WaitForChild("MusicStart")
 MusicStart = require(MusicStart)
 
+-- Main Loop.
 while true do
 	game.Workspace:WaitForChild("Hitbox")
 	for i,v in pairs(workspace.Hitbox:GetChildren()) do
